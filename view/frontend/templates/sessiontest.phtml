@@ -1,0 +1,11 @@
+<?php
+    $block->getCatalogSession()->setMyName('Open techiz');
+    $block->getCatalogSession()->unsMyName();
+    echo $block->getCatalogSession()->getMyName() . '<br />';
+     
+    $block->getCheckoutSession()->setTestData('Hello World');
+    echo $block->getCheckoutSession()->getTestData() . '<br />';
+     
+    $block->getCheckoutSession()->setTestHello('Test Value');
+    echo $block->getCheckoutSession()->getTestHello() . '<br />';
+?>

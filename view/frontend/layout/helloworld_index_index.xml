@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="page.wrapper">
+            <block class="Magento\Framework\View\Element\Template" template="Magento_Catalog::promo.phtml" before="-"/>
+            <referenceContainer name="main.content" htmlClass="page-main container-fluid">
+            <referenceContainer name="content">
+                <block class="Duud\HelloWorld\Block\Index" name="helloworld.index" template="helloworld.phtml" />
+                <block class="Duud\HelloWorld\Block\SessionTest" name="helloworld.session" template="sessiontest.phtml" />
+            </referenceContainer>
+        </referenceContainer>
+        </referenceContainer>
+    </body>
+</page>

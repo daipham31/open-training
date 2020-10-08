@@ -1,0 +1,8 @@
+<?php
+    $myBlock = \Magento\Framework\App\ObjectManager::getInstance()->get('Duud\HelloWorld\Block\Category');
+ 
+    if ($currentProduct = $myBlock->getCurrentCategory()) {
+        echo $currentProduct->getName() . '<br />';
+        print_r ($currentProduct->getCategoryIds()) . '<br />';    
+    }
+?>
