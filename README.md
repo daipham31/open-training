@@ -40,4 +40,8 @@ Not sure when we can't extend layout.
 9. 
 10. We can't var_dump() or print_r() because both of them try to print the object and this object has a lot of objects attached to it because of the dependency injection.
 - Solution: Xdebug or inject to construct and getData();
-11. DI for the next day.
+11. DI check the code.
+
+12. Test Packagist :))) 
+
+    composer require daipham31/module-helloworld
