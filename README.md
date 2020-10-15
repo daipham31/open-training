@@ -45,3 +45,23 @@ Not sure when we can't extend layout.
 12. Test Packagist :))) 
 
     composer require daipham31/module-helloworld
+
+
+
+13. Query all products name:
+SELECT value FROM   `catalog_product_entity_varchar` WHERE  `attribute_id` = 73;
+
+    Query all products name for English Store:
+SELECT value FROM   catalog_product_entity_varchar WHERE  attribute_id = (SELECT attribute_id FROM   eav_attribute WHERE  entity_type_id = 4 AND attribute_code LIKE 'name') AND  store_id = (SELECT store_id FROM   store WHERE  store.name LIKE 'English');
+    Query all customer name and customer email:
+SELECT
+customer_entity.fisrtname,
+customer_entity.middlename,
+customer_entity.lastname,
+customer_address_entity_text.value
+FROM customer_entity
+JOIN customer_address_entity ON customer_entity.entity_id = 
+customer_address_entity.parent_id
+JOIN customer_address_entity_text ON customer_address_entity.entity_id = 
+customer_address_entity_text.entity_id;
+
