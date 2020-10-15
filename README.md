@@ -94,4 +94,14 @@ Controller action match flow:
 FrontController::dispatch() → Router::match() → Controller::dispatch() -> Controller::execute()
 4. 
 
+5. Magento accumulates data into special tables using indexers.
+
+    Indexing types:
+    Full reindex, which means rebuilding all the indexing-related database tables
+    Full reindexing can be caused by a variety of things, including creating a new web store or new customer group.
+
+    Partial reindex, which means rebuilding the database tables only for the things that changed (like changing a single product attribute or price)
+
+
+
 
