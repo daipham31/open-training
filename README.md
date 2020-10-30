@@ -53,18 +53,12 @@ PART 4:
 SELECT value FROM   `catalog_product_entity_varchar` WHERE  `attribute_id` = 73;
 
     Query all products name for English Store:
-SELECT value FROM   catalog_product_entity_varchar WHERE  attribute_id = (SELECT attribute_id FROM   eav_attribute WHERE  entity_type_id = 4 AND attribute_code LIKE 'name') AND  store_id = (SELECT store_id FROM   store WHERE  store.name LIKE 'English');
+select value from catalog_product_entity_varchar left join eav_attribute on eav_attribute.attribute_id = catalog_product_entity_varchar.attribute_id JOIN store ON catalog_product_entity_varchar.store_id = store.store_id where eav_attribute.attribute_code='name' and store.name LIKE "English";
+
+
     Query all customer name and customer email:
-SELECT
-customer_entity.fisrtname,
-customer_entity.middlename,
-customer_entity.lastname,
-customer_address_entity_text.value
-FROM customer_entity
-JOIN customer_address_entity ON customer_entity.entity_id = 
-customer_address_entity.parent_id
-JOIN customer_address_entity_text ON customer_address_entity.entity_id = 
-customer_address_entity_text.entity_id;
+SELECT customer_entity.firstname, customer_entity.lastname, customer_entity.middlename, customer_entity.email FROM customer_entity
+
 
 1. Layout located in presentation layer.
 Magento app processes layout files in the following order:
